@@ -1,0 +1,99 @@
+.cupcakes-welcome-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/card4.jpeg");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.hrust-welcome-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/card3.jpeg");
+  background-position: bottom;
+  background-size: cover;
+}
+
+
+.item-welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: "Roboto-Bold";
+    color: rgb(0, 0, 0);
+    }
+
+    .item-main-text {
+        text-align: center;
+        padding-bottom: 5px;
+        font-family: "Roboto-Black";
+        --text-min: 24;
+        --text-max: 48;
+        --text-size: calc(
+          var(--text-min) * 1px + (var(--text-max) - var(--text-min)) *
+            (100vw - 480px) / (1920 - 480)
+        );
+
+        font-size: calc(
+          max(var(--text-min) * 1px, min(var(--text-size), var(--text-max) * 1px))
+        );
+}
+
+    @media (min-width: 0px) and (max-width: 1920px) {
+        .cupcakes-welcome-image {
+          height: calc(300px + (500 - 300) * (100vw - 480px) / (1920 - 480));
+        }
+        .hrust-welcome-image {
+          height: calc(300px + (500 - 300) * (100vw - 480px) / (1920 - 480));
+        }
+
+        .item-welcome-text-upper {
+          font-size: calc(32px + (48 - 32) * (100vw - 480px) / (1920 - 480));
+        }
+
+        .item-welcome-text-lower {
+          font-size: calc(12px + (16 - 12) * (100vw - 480px) / (1920 - 480));
+        }
+
+        .divider {
+          margin: calc(6px + (16 - 6) * (100vw - 480px) / (1920 - 480)) 0;
+    }
+
+        .item-section-text-upper {
+          font-size: calc(24px + (48 - 24) * (100vw - 480px) / (1920 - 480));
+        }
+
+        .item-section-text-lower {
+          font-size: calc(11px + (16 - 11) * (100vw - 480px) / (1920 - 480));
+        }
+
+.item-section-cards-card-text-upper {
+padding-bottom: 10px;
+font-size: calc(16px + (20 - 16) * (100vw - 480px) / (1920 - 480));
+        }
+
+.item-section-cards-card-text-lower {
+        font-family: "Roboto-Regular";
+        font-style: normal;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-top: 5px;
+        text-align: justify;
+          font-size: calc(13px + (14 - 11) * (100vw - 480px) / (1920 - 480));
+        }
+
+        .item-section {
+          --card-width: calc(280px + (383 - 280) * (100vw - 480px) / (1920 - 480));
+        }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

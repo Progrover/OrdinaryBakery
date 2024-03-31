@@ -1,0 +1,258 @@
+.footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@keyframes opacity-change {
+    from {
+opacity: 0%;
+    }
+
+    to {
+    opacity: 100%;
+    }
+}
+
+@font-face {
+    font-family: "Roboto-Black";
+    src:url("../fonts/Roboto-Black.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: local("Roboto_Bold"),
+url("../fonts/Roboto-Bold.ttf");
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0 !important;
+}
+
+.main-wrapper {
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto-Regular";
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.safe-container {
+    width: 100%;
+
+    padding: 0.8% 3%;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: 0.3px
+    solid rgb(255, 218, 154);
+}
+
+/* Адаптив */
+.header {
+    --logo-height-min: 25;
+    --logo-height-max: 33;
+
+    --logo-height: calc(
+      var(--logo-height-min) * 1px +
+        (var(--logo-height-max) - var(--logo-height-min)) * (100vw - 480px) /
+        (1920 - 480)
+    );
+
+    --logo-height-restricted: calc(
+max(
+        var(--logo-height-min) * 1px,
+        min(var(--logo-height), var(--logo-height-max) * 1px)
+)
+    );
+}
+
+.logo {
+    --text-min: 16;
+    --text-max: 22;
+
+    --text-size: calc(
+      var(--text-min) * 1px + (var(--text-max) - var(--text-min)) *
+        (100vw - 480px) / (1920 - 480)
+    );
+
+    font-size: calc(
+      max(var(--text-min) * 1px, min(var(--text-size), var(--text-max) * 1px))
+    );
+}
+
+.nav {
+    z-index: 999;
+    --text-min: 13;
+    --text-max: 15;
+
+    --text-size: calc(
+      var(--text-min) * 1px + (var(--text-max) - var(--text-min)) *
+        (100vw - 480px) / (1920 - 480)
+    );
+
+    font-size: calc(
+      max(var(--text-min) * 1px, min(var(--text-size), var(--text-max) * 1px))
+    );
+}
+  /* End adaptivity */
+
+.header {
+    height: fit-content;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+    border-bottom: 3px solid dimgrey;
+
+    font-family: "Inter";
+    font-weight: 400;
+
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 1em;
+}
+
+.logo img {
+    height: var(--logo-height-restricted);
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-icon-container {
+    display: none;
+
+    line-height: 0;
+
+    cursor: pointer;
+}
+
+.nav-icon-container img {
+    width: var(--logo-height-restricted);
+    height: var(--logo-height-restricted);
+
+    animation-name: opacity-change;
+    animation-duration: 0.8s;
+}
+
+.nav-icon-close {
+    display: none;
+}
+
+.nav {
+    display: flex;
+
+    gap: 1em;
+
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav > li {
+    overflow: hidden;
+
+    width: fit-content;
+    height: fit-content;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav > li a {
+    color: black;
+    text-decoration: none;
+font-family: "Roboto-Regular";
+font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-selected {
+    font-family: "Roboto-Black";
+    font-size: 15px;
+}
+
+.nav > li a:hover {
+    font-family: "Roboto-Regular";
+    font-size: 17px;
+    color: rgb(255, 189, 96);
+}
+
+@media (max-width: 900px) {
+    .nav-icon-container {
+    display: block;
+    }
+
+    #nav-toggle:checked + .nav-icon-container .nav-icon-menu {
+    display: none;
+    }
+
+    #nav-toggle:checked + .nav-icon-container .nav-icon-close {
+    display: block;
+    }
+
+    .nav {
+    display: none;
+
+    width: 100%;
+
+    position: absolute;
+      top: calc(var(--logo-height-restricted) + 2 * 10px);
+    left: 0;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2em;
+    padding: 1em 0;
+
+    background-color: white;
+
+    animation-name: opacity-change;
+    animation-duration: 0.8s;
+    }
+
+    #nav-toggle:checked ~ .nav {
+    display: flex;
+
+    border-top: 3px solid dimgrey;
+    border-bottom: 2px dotted dimgrey;
+    }
+
+    .nav-selected {
+    padding-bottom: 2px !important;
+    margin-right: 15px !important;
+    }
+}
+
+.fw-light{
+    padding-top: 10px;
+    font-family: "Roboto-Regular";
+}
+
