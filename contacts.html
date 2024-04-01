@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OrdinaryBakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+
+  <body>
+    <header class="safe-container header">
+      <section class="logo">
+        <img src="svg/logo.svg" alt="" />
+        <p>OrdinaryBakery</p>
+      </section>
+
+      <section>
+        <input id="nav-toggle" type="checkbox" />
+        <label class="nav-icon-container" for="nav-toggle">
+          <img class="nav-icon-menu" src="svg/nav-open.svg" alt="" />
+          <img class="nav-icon-close" src="svg/nav-close.svg" alt="" />
+        </label>
+        <ul class="nav">
+          <li class="nav-selected">
+            <a href="index.html">Главная</a>
+          </li>
+          <li>
+            <a href="menu.html">Меню</a>
+          </li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <main class="main-wrapper">
+      <div class="contact w-50 m-auto text-center">
+          <h1 class="fw-light mt-4 text-center">Оставьте Ваш отзыв</h1>
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control my-4"
+                id="exampleFormControlInput1"
+                placeholder="Имя пользователя"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Email"
+              />
+            </div>
+      
+            <div class="form-group mt-4">
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="4"
+                placeholder="Ваши комментарии"
+              ></textarea>
+            </div>
+            <button class="btn btn-warning m-auto mt-4">Поделиться</button>
+          </form>
+        </div>
+    </main>
+
+    <footer class="safe-container">
+      <div class="footer">
+          <p> OrdinaryBakery, 0000-2024. Недовольных не ждем</p>
+      </div>
+  </footer>
+</body>
